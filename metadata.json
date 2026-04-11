@@ -1,0 +1,5 @@
+{
+  "name": "Gemini Migration Assistant",
+  "description": "A service to assist with migrating AI workloads from OpenAI and AWS Bedrock to Google's Gemini models.",
+  "requestFramePermissions": []
+}
