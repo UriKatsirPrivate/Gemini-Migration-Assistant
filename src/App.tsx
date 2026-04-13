@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { GoogleGenAI, Type } from "@google/genai";
 import Markdown from 'react-markdown';
-import { Loader2, ArrowRight, Code, FileText, CheckCircle, Zap, Table as TableIcon, Lightbulb, Play, RotateCcw, Wrench, Terminal } from 'lucide-react';
+import { Loader2, ArrowRight, Code, FileText, CheckCircle, Zap, Table as TableIcon, Lightbulb, Play, RotateCcw, Wrench, Terminal, Github } from 'lucide-react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Joyride, Step } from 'react-joyride';
@@ -366,6 +366,15 @@ Always prioritize clarity and specificity over brevity. If the user's initial pr
             <h1 className="text-xl font-semibold tracking-tight tour-step-1">Gemini Migration Assistant</h1>
           </div>
           <div className="flex items-center gap-2">
+            <a
+              href="https://github.com/UriKatsirPrivate/Gemini-Migration-Assistant/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-1.5 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors border border-transparent hover:border-gray-700 flex items-center justify-center"
+              title="View on GitHub"
+            >
+              <Github className="w-5 h-5" />
+            </a>
             <button
               onClick={() => setRunTour(true)}
               className="px-3 py-1.5 text-sm font-medium text-gray-300 hover:text-white bg-gray-800 hover:bg-gray-700 rounded-lg transition-colors border border-gray-700"

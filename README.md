@@ -1,5 +1,7 @@
 # Gemini Migration Assistant
 
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/UriKatsirPrivate/Gemini-Migration-Assistant/)
+
 The **Gemini Migration Assistant** is a comprehensive tool designed to help developers and AI engineers seamlessly migrate their existing AI workloads from platforms like OpenAI and Anthropic (via AWS Bedrock) to the Google Gemini ecosystem.
 
 ## 🚀 Key Features
