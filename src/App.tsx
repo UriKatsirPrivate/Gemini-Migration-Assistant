@@ -112,7 +112,7 @@ export default function App() {
   const [sourceSystem, setSourceSystem] = useState('OpenAI');
   const [prompts, setPrompts] = useState('');
   const [code, setCode] = useState('');
-  const [selectedModel, setSelectedModel] = useState('gemini-3-flash-preview');
+  const [selectedModel, setSelectedModel] = useState('gemini-3.5-flash');
   const [loading, setLoading] = useState(false);
   const [plan, setPlan] = useState<MigrationPlan | null>(null);
   const [activeTab, setActiveTab] = useState<'overview' | 'cheatsheet' | 'samples' | 'prompt' | 'code' | 'skills' | 'integration'>('overview');
@@ -187,7 +187,7 @@ export default function App() {
       2. 'suggestedSteps': An object containing two arrays of strings, representing concrete, actionable steps for the migration process:
          - 'googleGenAi': Steps if the user chooses the google-genai SDK.
          - 'openAiCompatible': Steps if the user chooses the OpenAI-compatible API.
-      3. 'modelRecommendation': An object with 'model' (which Gemini 3.0 or 3.1 model to use) and 'reasoning' (markdown string explaining why). CRITICAL: You MUST ONLY recommend Gemini 3.0 or 3.1 models (e.g., Gemini 3.1 Pro, Gemini 3.0 Flash, or Gemini 3.1 Flash-Lite). DO NOT recommend Gemini 1.5 or any version below 3.0.
+      3. 'modelRecommendation': An object with 'model' (which Gemini model to use) and 'reasoning' (markdown string explaining why). CRITICAL: You MUST ONLY recommend Gemini 3.0, 3.1, or 3.5 models (e.g., Gemini 3.1 Pro, Gemini 3.5 Flash, or Gemini 3.1 Flash-Lite). When recommending Flash models, you MUST recommend gemini-3.5-flash. DO NOT recommend Gemini 1.5 or any version below 3.0.
       4. 'optimizedPrompt': An object with 'systemPrompt' (the improved system instructions/context), 'userPrompt' (the improved user query, incorporating best practices like clear structure, XML tags, etc.), and 'reasoning' (markdown string explaining the improvements). CRITICAL: You MUST include at least 2-3 few-shot examples within the 'systemPrompt' or 'userPrompt' to demonstrate the expected input and output format. (If no prompt provided, create brand new optimized prompts based on the use case).
       5. 'convertedCode': An object containing two versions of the Python code (either converted from the user's code, or generated from scratch if no code was provided). The code MUST use the optimized system and user prompts generated in step 4.
          - 'googleGenAi': The code using the new \`google-genai\` SDK.
@@ -387,7 +387,7 @@ Always prioritize clarity and specificity over brevity. If the user's initial pr
               onChange={(e) => setSelectedModel(e.target.value)}
               className="px-3 py-1.5 bg-gray-950 border border-gray-800 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm text-gray-100"
             >
-              <option value="gemini-3-flash-preview">Gemini 3.0 Flash (Fast & Capable)</option>
+              <option value="gemini-3.5-flash">Gemini 3.5 Flash (Fast & Capable)</option>
               <option value="gemini-3.1-pro-preview">Gemini 3.1 Pro (Best Reasoning)</option>
             </select>
           </div>

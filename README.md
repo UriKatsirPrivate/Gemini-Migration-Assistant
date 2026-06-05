@@ -59,7 +59,7 @@ The app will be available at `http://localhost:3000`.
 1. **Select Source**: Choose whether you are migrating from OpenAI or Claude (Bedrock).
 2. **Describe Use Case**: Briefly explain what your current application does.
 3. **Input Prompts & Code**: Paste your existing system instructions and Python code snippets.
-4. **Select Gemini Model**: Choose between Gemini 3.0 Flash (for speed) or Gemini 3.1 Pro (for complex reasoning).
+4. **Select Gemini Model**: Choose between Gemini 3.5 Flash (for speed) or Gemini 3.1 Pro (for complex reasoning).
 5. **Generate**: Click "Generate Plan" to receive your customized migration package.
 6. **Explore Tabs**:
     - **Overview**: Read your migration strategy.
