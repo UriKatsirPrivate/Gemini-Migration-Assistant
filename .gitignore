@@ -6,3 +6,5 @@ coverage/
 *.log
 .env*
 !.env.example
+run.sh
+setup-data-sharing.sh
