@@ -21,7 +21,8 @@ The **Gemini Migration Assistant** is a comprehensive tool designed to help deve
 - **Frontend**: React 18+, TypeScript, Vite
 - **Styling**: Tailwind CSS
 - **Icons**: Lucide React
-- **AI Engine**: Google Gemini API (`@google/genai`)
+- **Backend**: Express (proxies Gemini calls to Vertex AI)
+- **AI Engine**: Google Gemini via Vertex AI (`@google/genai`)
 - **Components**: 
     - `react-joyride` for the interactive tour
     - `react-syntax-highlighter` for beautiful code snippets
@@ -32,7 +33,8 @@ The **Gemini Migration Assistant** is a comprehensive tool designed to help deve
 ### Prerequisites
 
 - Node.js (v18 or higher)
-- A Google Gemini API Key
+- A Google Cloud project with the Vertex AI API enabled
+- `gcloud` CLI authenticated with Application Default Credentials (`gcloud auth application-default login`)
 
 ### Installation
 
@@ -43,16 +45,18 @@ The **Gemini Migration Assistant** is a comprehensive tool designed to help deve
    ```
 3. Set up your environment variables. Create a `.env` file in the root directory:
    ```env
-   VITE_GEMINI_API_KEY=your_gemini_api_key_here
+   GOOGLE_CLOUD_PROJECT=your-gcp-project-id
+   GOOGLE_CLOUD_LOCATION=us-central1
    ```
 
 ### Running the App
 
-Start the development server:
+This app has two parts: the Vite frontend and an Express backend that calls Vertex AI (credentials never reach the browser). Run both in separate terminals:
 ```bash
-npm run dev
+npm run dev      # frontend, http://localhost:3000
+npm run server   # backend, http://localhost:8787
 ```
-The app will be available at `http://localhost:3000`.
+The frontend proxies `/api` requests to the backend during development.
 
 ## 📖 How to Use
 
